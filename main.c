@@ -123,28 +123,50 @@ int main()
 					{
 						eLedState = RIGHT_DIRECTION;
 					}
-					break;
+					else if(eKeyboardRead() == BUTTON_3){
+						eLedState = WIPER;
+					}
+				break;
 				case RIGHT_DIRECTION:
 					if(eKeyboardRead() == RELASED)
 					{
 						LedStepRight();
 					}
-					else if(eKeyboardRead() == BUTTON_1)
-					{
+					else if(eKeyboardRead() == BUTTON_1){
 						eLedState = STOP;
 					}
-					break;
-					case LEFT_DIRECTION:
-					if(eKeyboardRead() == RELASED)
-					{
+				break;
+				case LEFT_DIRECTION:
+					if(eKeyboardRead() == RELASED){
 						LedStepLeft();
 					}
-					if(eKeyboardRead() == BUTTON_1)
-					{
+					if(eKeyboardRead() == BUTTON_1){
 						eLedState = STOP;
 					}
-					break;
-				
+				break;
+				case WIPER:
+					if(iMigCounter==7){
+						iMigCounter = 0;
+						eLedState = WAIT;
+					}
+					else{
+						iMigCounter++;
+						if(iLedNumber==0){
+							LedOn(0);
+							iLedNumber=1;
+						}
+						else if(iLedNumber==1){
+							LedOn(1);
+							iLedNumber=0;
+						}
+					}
+				break;
+				case WAIT:
+						if(eKeyboardRead() == BUTTON_2){
+							eLedState = RIGHT_DIRECTION;
+						}
+						else{}
+				break;
 			}
 			Delay(100);
   }
