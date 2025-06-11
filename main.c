@@ -12,16 +12,9 @@ enum LedState {RIGHT_DIRECTION, LEFT_DIRECTION, STOP};										//Zadanie 6
 
 
 
-void Delay(int iMiliseconds)
-{
-
-  int iLoopIteration;
-  iTimeDelay = (iMiliseconds * 5456);
-
-  for(iLoopIteration = 0 ; iLoopIteration < iTimeDelay ; iLoopIteration++)
-  {
-
-  }
+void Delay(int milisec){
+	int iterator;
+	for(iterator=1; iterator<milisec*2000; iterator++){}
 }
 
 
