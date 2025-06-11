@@ -7,7 +7,7 @@ int iStepCounter;
 
 //enum LedState {RIGHT_DIRECTION, LEFT_DIRECTION};												//ZADANIE 3
 //enum LedState {RIGHT_DIRECTION, STOP};																		//Zadanie 4 i 5
-enum LedState {RIGHT_DIRECTION, LEFT_DIRECTION, STOP};										//Zadanie 6
+enum LedState {RIGHT_DIRECTION, LEFT_DIRECTION, STOP, WIPER, WAIT};									//Zadanie 6
 
 
 
